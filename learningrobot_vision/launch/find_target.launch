@@ -1,0 +1,9 @@
+<launch>
+
+    <node name="exploring_maze" pkg="learningrobot_navigation" type = "exploring_maze.py" output = "screen" />
+    <node name="object_detect" pkg="learningrobot_vision" type="object_detect.py" output="screen"/>
+    <node name="move_to_target" pkg="learningrobot_vision" type="move_to_target" output="screen"/>
+    <node name="tts_subscribe" pkg="learningrobot_voice" type="tts_subscribe" output="screen"/>
+
+</launch>    
+    
