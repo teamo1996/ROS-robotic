@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="learningrobot">
+    <xacro:include filename="$(find learningrobot_description)/urdf/learningrobot_base_gazebo.xacro"/>
+    <xacro:include filename="$(find learningrobot_description)/urdf/sensors/kinect_gazebo.xacro" />
+    <xacro:include filename="$(find learningrobot_description)/urdf/sensors/lidar_gazebo.xacro" />
+
+    <xacro:property name="kinect_offset_x" value="0.16" />
+    <xacro:property name="kinect_offset_y" value="0" />
+    <xacro:property name="kinect_offset_z" value="0.065" />
+    <xacro:property name="lidar_offset_x" value="0" />
+    <xacro:property name="lidar_offset_y" value="0" />
+    <xacro:property name="lidar_offset_z" value="0.08" />
+       
+    <learningrobot_base_gazebo/>
+    <!-- kinect -->
+    <xacro:kinect_camera prefix="kinect"/>  
+    <joint name="kinect_joint" type="fixed">
+        <origin xyz="${kinect_offset_x} ${kinect_offset_y} ${kinect_offset_z}" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="kinect_link"/>
+    </joint>
+
+    <!--lidar-->
+    <xacro:rplidar prefix="laser"/>
+    <joint name="support_joint" type="fixed">
+        <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="support_link"/>
+    </joint>
+
+    
+
+</robot>
