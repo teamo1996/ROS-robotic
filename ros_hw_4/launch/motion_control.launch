@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" />
+
+        <node pkg="ros_hw_4" type="turtle_spawn" name="turtle_spawn1" args = "turtle2"/>
+        <node pkg="ros_hw_4" type="turtle_spawn" name="turtle_spawn2" args = "turtle3"/>
+        <node pkg="ros_hw_4" type="turtle_spawn" name="turtle_spawn3" args = "turtle4"/>
+        <node pkg="ros_hw_4" type="turtle_spawn" name="turtle_spawn4" args = "turtle5"/>
+
+        <node pkg="ros_hw_4" type="motion_control_service" name="motion_control_service"  output = "screen" />
+
+        <node pkg="ros_hw_4" type="motion_control_client" name="motion_control_client1" args = "turtle1 begin 0.5 0.5" output = "screen"/>
+        <node pkg="ros_hw_4" type="motion_control_client" name="motion_control_client2" args = "turtle4 begin 0.5 0.5" output = "screen"/>
+</launch>

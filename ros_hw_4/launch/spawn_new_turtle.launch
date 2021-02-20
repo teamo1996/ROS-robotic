@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+        <node pkg="ros_hw_4" type="spawn_new_turtle" name="spawn_new_turtle1">     
+        </node>
+
+        <node pkg="ros_hw_4" type="spawn_new_turtle" name="spawn_new_turtle2">     
+        </node>
+
+        <node pkg="ros_hw_4" type="spawn_new_turtle" name="spawn_new_turtle3">     
+        </node>
+</launch>

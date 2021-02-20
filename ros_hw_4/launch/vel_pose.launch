@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+        <!--启动小乌龟节点-->
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"> 
+        </node>
+        <!--启动速度控制节点-->
+        <node pkg="ros_hw_4" type="vel_pose" name="vel_pose" output = "screen">
+        </node>
+</launch>
